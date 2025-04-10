@@ -41,3 +41,61 @@
 2025-04-10 13:21:43 | WARNING | Bot shutting down
 2025-04-10 13:21:44 | INFO | Bot stopped
 2025-04-10 13:21:44 | INFO | Bot stopped by user
+2025-04-10 14:05:59 | INFO | Starting bot polling...
+2025-04-10 14:05:59 | INFO | Bot started
+2025-04-10 14:06:15 | INFO | User 1337142737 started the bot
+2025-04-10 14:06:17 | INFO | User 1337142737 opened calendar
+2025-04-10 14:06:32 | SUCCESS | User 1337142737 added new date: 11.04.2025 (ID: ef68ade6-ee50-4fe2-ae8d-0bb067d1a9d1)
+2025-04-10 14:06:34 | INFO | User 1337142737 requested their events
+2025-04-10 14:06:36 | SUCCESS | User 1337142737 deleted event ef68ade6-ee50-4fe2-ae8d-0bb067d1a9d1 (11.04.2025)
+2025-04-10 14:13:27 | INFO | User 1337142737 started the bot
+2025-04-10 14:13:34 | WARNING | Bot shutting down
+2025-04-10 14:13:34 | INFO | Bot stopped
+2025-04-10 14:13:34 | INFO | Bot stopped by user
+2025-04-10 14:38:52 | INFO | Starting bot polling...
+2025-04-10 14:38:52 | INFO | Bot started
+2025-04-10 14:38:52 | INFO | User 1337142737 opened calendar
+2025-04-10 14:38:59 | INFO | User 1337142737 started the bot
+2025-04-10 14:39:01 | INFO | User 1337142737 opened calendar
+2025-04-10 14:39:03 | SUCCESS | User 1337142737 added new date: 25.04.2025 (ID: 28c575b9-7dc9-408c-9788-f14f766a12d9)
+2025-04-10 14:39:05 | INFO | User 1337142737 requested their events
+2025-04-10 14:39:09 | SUCCESS | User 1337142737 deleted event 28c575b9-7dc9-408c-9788-f14f766a12d9 (25.04.2025)
+2025-04-10 14:42:12 | WARNING | Bot shutting down
+2025-04-10 14:42:12 | INFO | Bot stopped
+2025-04-10 14:42:12 | INFO | Bot stopped by user
+2025-04-10 14:42:28 | INFO | Starting bot polling...
+2025-04-10 14:42:28 | INFO | Bot started
+2025-04-10 14:42:41 | INFO | User 1337142737 started the bot
+2025-04-10 14:42:43 | INFO | User 1337142737 opened calendar
+2025-04-10 14:42:45 | SUCCESS | User 1337142737 added new date: 11.04.2025 (ID: b55f3365-cb80-4c84-86e2-ee8e4b459e24)
+2025-04-10 14:42:49 | INFO | User 1337142737 requested their events
+2025-04-10 14:43:13 | INFO | User 1337142737 requested their events
+2025-04-10 14:43:20 | INFO | User 1337142737 requested their events
+2025-04-10 14:43:23 | SUCCESS | User 1337142737 deleted event b55f3365-cb80-4c84-86e2-ee8e4b459e24 (11.04.2025)
+2025-04-10 14:43:27 | DEBUG | User 1337142737 requested today's date
+2025-04-10 14:46:19 | INFO | User 1337142737 requested their events
+2025-04-10 14:46:22 | INFO | User 1337142737 started the bot
+2025-04-10 14:46:25 | DEBUG | User 1337142737 requested today's date
+2025-04-10 14:46:27 | INFO | User 1337142737 requested their events
+2025-04-10 14:46:29 | INFO | User 1337142737 opened calendar
+2025-04-10 14:46:31 | SUCCESS | User 1337142737 added new date: 11.04.2025 (ID: 8741bf82-422f-4678-966e-3a31dd5f5ce9)
+2025-04-10 14:46:33 | INFO | User 1337142737 requested their events
+2025-04-10 14:53:34 | INFO | User 1337142737 started the bot
+2025-04-10 14:53:36 | INFO | User 1337142737 opened calendar
+2025-04-10 14:53:38 | WARNING | User 1337142737 tried to add existing date 11.04.2025
+2025-04-10 14:53:47 | SUCCESS | User 1337142737 cleared all events (1 removed)
+2025-04-10 14:53:48 | INFO | User 8104329017 started the bot
+2025-04-10 14:53:52 | INFO | User 1337142737 requested their events
+2025-04-10 14:53:54 | INFO | User 1337142737 opened calendar
+2025-04-10 14:53:56 | SUCCESS | User 1337142737 added new date: 10.04.2025 (ID: 85956b07-a28d-40e7-be5d-4743f0aa8bd8)
+2025-04-10 14:53:57 | INFO | User 1337142737 requested their events
+2025-04-10 14:55:21 | WARNING | Bot shutting down
+2025-04-10 14:55:22 | INFO | Bot stopped
+2025-04-10 14:55:22 | INFO | Bot stopped by user
+2025-04-10 15:03:24 | INFO | Starting bot polling...
+2025-04-10 15:03:24 | INFO | Bot started
+2025-04-10 15:03:31 | INFO | User 1337142737 started the bot
+2025-04-10 15:03:36 | INFO | User 1337142737 requested their events
+2025-04-10 15:25:01 | WARNING | Bot shutting down
+2025-04-10 15:25:01 | INFO | Bot stopped
+2025-04-10 15:25:01 | INFO | Bot stopped by user
