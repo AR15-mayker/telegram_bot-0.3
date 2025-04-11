@@ -99,3 +99,54 @@
 2025-04-10 15:25:01 | WARNING | Bot shutting down
 2025-04-10 15:25:01 | INFO | Bot stopped
 2025-04-10 15:25:01 | INFO | Bot stopped by user
+2025-04-11 10:47:37 | INFO | Starting bot polling...
+2025-04-11 10:47:37 | INFO | Bot started
+2025-04-11 10:47:37 | INFO | User 1337142737 started the bot
+2025-04-11 10:47:51 | INFO | User 1337142737 opened calendar
+2025-04-11 10:47:55 | WARNING | User 1337142737 tried to add existing date 17.04.2025
+2025-04-11 10:48:00 | SUCCESS | User 1337142737 cleared all events (1 removed)
+2025-04-11 10:48:01 | INFO | User 8104329017 started the bot
+2025-04-11 10:48:03 | INFO | User 1337142737 opened calendar
+2025-04-11 10:48:07 | WARNING | User 1337142737 tried to add existing date 11.04.2025
+2025-04-11 10:48:12 | INFO | User 1337142737 opened calendar
+2025-04-11 10:48:14 | WARNING | User 1337142737 tried to add existing date 23.04.2025
+2025-04-11 10:48:21 | INFO | User 1337142737 requested their events
+2025-04-11 10:50:59 | WARNING | Bot shutting down
+2025-04-11 10:50:59 | INFO | Bot stopped
+2025-04-11 10:50:59 | INFO | Bot stopped by user
+2025-04-11 10:53:45 | INFO | Starting bot polling...
+2025-04-11 10:53:45 | INFO | Bot started
+2025-04-11 10:53:54 | INFO | User 1337142737 started the bot
+2025-04-11 10:53:55 | INFO | User 1337142737 opened calendar
+2025-04-11 10:53:57 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: cbec3bf6-d65d-4c30-bb02-070369093569)
+2025-04-11 10:53:59 | INFO | User 1337142737 requested their events
+2025-04-11 10:54:02 | SUCCESS | User 1337142737 deleted event cbec3bf6-d65d-4c30-bb02-070369093569 (18.04.2025)
+2025-04-11 10:54:06 | INFO | User 1337142737 opened calendar
+2025-04-11 10:54:08 | SUCCESS | User 1337142737 added new date: 25.04.2025 (ID: f278b014-dd71-4b4d-88d1-4e6341417b5a)
+2025-04-11 10:54:10 | INFO | User 1337142737 requested their events
+2025-04-11 10:54:39 | INFO | User 1337142737 started the bot
+2025-04-11 10:56:45 | INFO | User 5045026018 started the bot
+2025-04-11 10:56:49 | INFO | User 5045026018 opened calendar
+2025-04-11 10:56:58 | SUCCESS | User 5045026018 added new date: 12.05.2025 (ID: f9c51290-c442-4986-b9c2-59729b945189)
+2025-04-11 10:57:07 | INFO | User 5045026018 requested their events
+2025-04-11 10:57:14 | INFO | User 5045026018 opened calendar
+2025-04-11 10:58:06 | INFO | User 5045026018 requested their events
+2025-04-11 10:58:12 | SUCCESS | User 5045026018 deleted event f9c51290-c442-4986-b9c2-59729b945189 (12.05.2025)
+2025-04-11 11:23:57 | WARNING | Bot shutting down
+2025-04-11 11:23:57 | INFO | Bot stopped
+2025-04-11 11:23:57 | INFO | Bot stopped by user
+2025-04-11 11:28:43 | INFO | Starting bot polling...
+2025-04-11 11:28:43 | INFO | Bot started
+2025-04-11 11:29:09 | INFO | User 1337142737 started the bot
+2025-04-11 11:29:11 | INFO | User 1337142737 opened calendar
+2025-04-11 11:29:13 | SUCCESS | User 1337142737 added new date: 12.04.2025 (ID: 2f8abc33-ce8d-4159-a75e-acf58a489954)
+2025-04-11 11:29:14 | INFO | User 1337142737 requested their events
+2025-04-11 11:29:18 | SUCCESS | User 1337142737 deleted event 2f8abc33-ce8d-4159-a75e-acf58a489954 (12.04.2025)
+2025-04-11 11:29:22 | SUCCESS | User 1337142737 deleted event f278b014-dd71-4b4d-88d1-4e6341417b5a (25.04.2025)
+2025-04-11 11:29:25 | INFO | User 1337142737 opened calendar
+2025-04-11 11:29:26 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: 677dd611-f2f7-43f6-8f56-b88c8712f21c)
+2025-04-11 11:29:27 | INFO | User 1337142737 requested their events
+2025-04-11 11:29:39 | INFO | User 1337142737 set reminder for 677dd611-f2f7-43f6-8f56-b88c8712f21c at 18.04.2025 12:12
+2025-04-11 11:29:50 | WARNING | Bot shutting down
+2025-04-11 11:29:50 | INFO | Bot stopped
+2025-04-11 11:29:50 | INFO | Bot stopped by user

@@ -31,6 +31,9 @@ if not TOKEN:
 bot = Bot(TOKEN)
 dp = Dispatcher()
 
+# Глобальные переменные для хранения состояния
+remind_data = {}
+
 # Константы
 DELETE_PREFIX = "del_"
 CONFIRM_PREFIX = "cfm_"
@@ -77,7 +80,7 @@ class EventManager:
             (user_id,),
             fetch=True
         )
-        return {row[0]: {"date": row[1], "text": row[2], "remind_time": row[3]} for row in rows}
+        return {row[0]: {"date": row[1], "text": row[2], "remind_time": row[3]} for row in rows} if rows else {}
 
     @staticmethod
     async def add_event(user_id: int, event_id: str, date: str, text: str = "Мое событие", remind_time: str = None):
@@ -115,17 +118,17 @@ class EventManager:
 
     @staticmethod
     async def event_exists(user_id: int, date: str) -> bool:
-        return (await Database.execute_query(
+        return len(await Database.execute_query(
             "SELECT 1 FROM events WHERE user_id = ? AND date = ? LIMIT 1",
             (user_id, date),
             fetch=True
-        )) is not None
+        )) > 0
 
     @staticmethod
     async def get_events_for_reminder() -> List[Tuple[int, str, str]]:
         now = datetime.now().strftime("%d.%m.%Y %H:%M")
         return await Database.execute_query(
-            "SELECT user_id, date, text FROM events WHERE remind_time = ?",
+            "SELECT user_id, text, date FROM events WHERE remind_time = ?",
             (now,),
             fetch=True
         )
@@ -133,7 +136,7 @@ class EventManager:
 class KeyboardManager:
     """Класс для управления клавиатурами"""
     @staticmethod
-    async def get_events_keyboard(user_id: int, page: int) -> InlineKeyboardMarkup:
+    async def get_events_keyboard(user_id: int, page: int = 0) -> InlineKeyboardMarkup:
         events = await EventManager.get_user_events(user_id)
         events_list = list(events.items())
         total_pages = (len(events_list) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
@@ -162,7 +165,7 @@ class KeyboardManager:
                     text="⬅️ Назад",
                     callback_data=f"{PAGE_PREFIX}{page-1}"
                 ))
-        if page < total_pages - 1:
+        if page < total_pages - 1 and total_pages > 1:
             pagination_buttons.append(
                 InlineKeyboardButton(
                     text="Вперед ➡️",
@@ -172,12 +175,13 @@ class KeyboardManager:
         if pagination_buttons:
             keyboard.append(pagination_buttons)
         
-        keyboard.append([
-            InlineKeyboardButton(
-                text="🗑️ Очистить все",
-                callback_data="clear_all"
-            )
-        ])
+        if events_list:
+            keyboard.append([
+                InlineKeyboardButton(
+                    text="🗑️ Очистить все",
+                    callback_data="clear_all"
+                )
+            ])
         
         return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
@@ -207,22 +211,29 @@ class MessageManager:
         
         events_text = "📅 Ваши события:\n\n"
         for i, (event_id, event_data) in enumerate(page_events, 1):
-            reminder_info = f" (⏰ напомнить в {event_data['remind_time']})" if event_data['remind_time'] else ""
+            reminder_info = f" (⏰ напомнить в {event_data['remind_time'].split()[1]})" if event_data['remind_time'] else ""
             events_text += f"{i}. {event_data['date']} - {event_data['text']}{reminder_info}\n"
         
         return events_text, total_pages
 
     @staticmethod
-    async def display_events_page(message: types.Message, user_id: int, page: int):
+    async def display_events_page(message: types.Message | types.CallbackQuery, user_id: int, page: int):
         events_text, total_pages = await MessageManager.get_user_events_text(user_id, page)
         keyboard = await KeyboardManager.get_events_keyboard(user_id, page)
-        await message.answer(
-            f"{events_text}\nСтраница {page+1}/{total_pages}",
-            reply_markup=keyboard
-        )
+        
+        if isinstance(message, types.CallbackQuery):
+            await message.message.edit_text(
+                f"{events_text}\nСтраница {page+1}/{total_pages}",
+                reply_markup=keyboard
+            )
+        else:
+            await message.answer(
+                f"{events_text}\nСтраница {page+1}/{total_pages}",
+                reply_markup=keyboard
+            )
 
     @staticmethod
-    async def april_fools_joke(message: types.Message):
+    async def april_fools_joke(message: types.Message | types.CallbackQuery):
         jokes = [
             "⚠️ Внимание! Обнаружена критическая ошибка в системе календаря!",
             "🔧 Технические работы... Попробуйте позже... Гораздо позже...",
@@ -233,18 +244,24 @@ class MessageManager:
             "📆 Все ваши даты были случайно отправлены в прошлое. Извините!",
             "💾 Ошибка загрузки модуля юмора. Серьезное сообщение: сегодня 1 апреля! 😄"
         ]
-        await message.answer(random.choice(jokes))
+        if isinstance(message, types.CallbackQuery):
+            await message.message.answer(random.choice(jokes))
+        else:
+            await message.answer(random.choice(jokes))
 
 async def remind_checker():
     """Проверяет и отправляет напоминания"""
     while True:
         try:
             events = await EventManager.get_events_for_reminder()
-            for user_id, date, text in events:
-                await bot.send_message(
-                    user_id,
-                    f"⏰ Напоминание!\n{date} - {text}"
-                )
+            for user_id, text, date in events:
+                try:
+                    await bot.send_message(
+                        user_id,
+                        f"⏰ Напоминание!\n{date} - {text}"
+                    )
+                except Exception as e:
+                    logger.error(f"Ошибка при отправке напоминания пользователю {user_id}: {e}")
         except Exception as e:
             logger.error(f"Ошибка в remind_checker: {e}")
         await asyncio.sleep(REMINDER_CHECK_INTERVAL)
@@ -253,7 +270,7 @@ def is_april_fools_day() -> bool:
     today = datetime.now()
     return today.month == 4 and today.day == 1
 
-async def check_april_fools(message: types.Message) -> bool:
+async def check_april_fools(message: types.Message | types.CallbackQuery) -> bool:
     if is_april_fools_day() and random.random() < 0.5:
         await MessageManager.april_fools_joke(message)
         return True
@@ -388,6 +405,11 @@ async def handle_confirmation(callback_query: types.CallbackQuery):
                 f"🗑️ Событие на {event_date} удалено!",
                 reply_markup=KeyboardManager.get_back_keyboard()
             )
+        else:
+            await callback_query.message.edit_text(
+                "Ошибка при удалении события",
+                reply_markup=KeyboardManager.get_back_keyboard()
+            )
     else:
         await callback_query.message.edit_text(
             f"❌ Удаление события на {event_date} отменено",
@@ -404,13 +426,19 @@ async def set_reminder_handler(callback_query: types.CallbackQuery):
         await callback_query.answer("Событие не найдено!")
         return
     
+    remind_data[user_id] = {"remind_event_id": event_id}
     await callback_query.message.answer(
         f"⏰ Установите время напоминания для {events[event_id]['date']} (в формате ЧЧ:ММ):"
     )
-    dp["remind_event_id"] = event_id
 
-@dp.message(lambda message: message.text and "remind_event_id" in dp)
+@dp.message(F.text)
 async def process_reminder_time(message: types.Message):
+    user_id = message.from_user.id
+    
+    # Проверяем, ожидаем ли мы время напоминания от этого пользователя
+    if user_id not in remind_data or "remind_event_id" not in remind_data[user_id]:
+        return
+    
     try:
         time_str = message.text.replace(" ", "")
         if ":" not in time_str:
@@ -420,8 +448,7 @@ async def process_reminder_time(message: types.Message):
         if not (0 <= hours < 24 and 0 <= minutes < 60):
             raise ValueError
         
-        user_id = message.from_user.id
-        event_id = dp["remind_event_id"]
+        event_id = remind_data[user_id]["remind_event_id"]
         events = await EventManager.get_user_events(user_id)
         
         if event_id not in events:
@@ -439,10 +466,15 @@ async def process_reminder_time(message: types.Message):
             logger.info(f"User {user_id} set reminder for {event_id} at {remind_time}")
         else:
             await message.answer("Ошибка при установке напоминания")
-    except:
+    except ValueError:
         await message.answer("Неправильный формат времени. Используйте ЧЧ:ММ")
+    except Exception as e:
+        logger.error(f"Error setting reminder: {e}")
+        await message.answer("Произошла ошибка при установке напоминания")
     finally:
-        dp.pop("remind_event_id", None)
+        # Удаляем данные о состоянии, даже если произошла ошибка
+        if user_id in remind_data:
+            del remind_data[user_id]
 
 @dp.callback_query(F.data == "confirm_clear_all")
 async def confirm_clear_all_handler(callback_query: types.CallbackQuery):
@@ -470,13 +502,13 @@ async def cancel_clear_all_handler(callback_query: types.CallbackQuery):
 @dp.callback_query(F.data.startswith(PAGE_PREFIX))
 async def handle_pagination(callback_query: types.CallbackQuery):
     page = int(callback_query.data[len(PAGE_PREFIX):])
-    await MessageManager.display_events_page(callback_query.message, callback_query.from_user.id, page)
+    await MessageManager.display_events_page(callback_query, callback_query.from_user.id, page)
 
 @dp.callback_query(F.data == "back_to_events")
 async def back_to_events_handler(callback_query: types.CallbackQuery):
     user_id = callback_query.from_user.id
     if await EventManager.get_user_events(user_id):
-        await MessageManager.display_events_page(callback_query.message, user_id, 0)
+        await MessageManager.display_events_page(callback_query, user_id, 0)
     else:
         await callback_query.message.edit_text("📭 У вас нет сохраненных событий.")
 
