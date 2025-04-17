@@ -150,3 +150,55 @@
 2025-04-11 11:29:50 | WARNING | Bot shutting down
 2025-04-11 11:29:50 | INFO | Bot stopped
 2025-04-11 11:29:50 | INFO | Bot stopped by user
+2025-04-17 12:18:19 | INFO | Starting bot polling...
+2025-04-17 12:18:19 | INFO | Bot started
+2025-04-17 12:19:22 | INFO | User 1337142737 started the bot
+2025-04-17 12:19:25 | INFO | User 1337142737 opened calendar
+2025-04-17 12:19:26 | WARNING | User 1337142737 tried to add existing date 18.04.2025
+2025-04-17 12:19:31 | SUCCESS | User 1337142737 cleared all events (1 removed)
+2025-04-17 12:19:32 | INFO | User 8104329017 started the bot
+2025-04-17 12:19:34 | INFO | User 1337142737 opened calendar
+2025-04-17 12:19:35 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: 4f62c728-ff20-4d66-8da1-66bc7898ee38)
+2025-04-17 12:19:37 | INFO | User 1337142737 requested their events
+2025-04-17 12:19:40 | SUCCESS | User 1337142737 deleted event 4f62c728-ff20-4d66-8da1-66bc7898ee38 (18.04.2025)
+2025-04-17 12:19:47 | INFO | User 1337142737 requested their events
+2025-04-17 12:19:49 | INFO | User 1337142737 opened calendar
+2025-04-17 12:19:50 | SUCCESS | User 1337142737 added new date: 17.04.2025 (ID: 79b41c2d-90f3-4739-965c-5911b7c66a7b)
+2025-04-17 12:19:52 | INFO | User 1337142737 requested their events
+2025-04-17 12:20:03 | INFO | User 1337142737 set reminder for 79b41c2d-90f3-4739-965c-5911b7c66a7b at 17.04.2025 12:21
+2025-04-17 12:28:47 | WARNING | Bot shutting down
+2025-04-17 12:28:47 | INFO | Bot stopped
+2025-04-17 12:28:47 | INFO | Bot stopped by user
+2025-04-17 12:36:45 | INFO | Starting bot polling...
+2025-04-17 12:36:45 | INFO | Bot started
+2025-04-17 12:37:00 | INFO | User 1337142737 started the bot
+2025-04-17 12:37:02 | INFO | User 1337142737 opened calendar
+2025-04-17 12:37:04 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: d780d917-d520-405b-a65e-e14f39b6e614)
+2025-04-17 12:37:06 | INFO | User 1337142737 requested their events
+2025-04-17 12:37:10 | SUCCESS | User 1337142737 deleted event 79b41c2d-90f3-4739-965c-5911b7c66a7b (17.04.2025)
+2025-04-17 12:42:51 | WARNING | Bot shutting down
+2025-04-17 12:42:51 | INFO | Bot stopped
+2025-04-17 12:42:51 | INFO | Bot stopped by user
+2025-04-17 12:42:54 | INFO | Starting bot polling...
+2025-04-17 12:42:54 | INFO | Bot started
+2025-04-17 12:43:03 | INFO | User 1337142737 started the bot
+2025-04-17 12:45:36 | WARNING | Bot shutting down
+2025-04-17 12:45:37 | INFO | Bot stopped
+2025-04-17 12:45:37 | INFO | Bot stopped by user
+2025-04-17 12:45:39 | INFO | Starting bot polling...
+2025-04-17 12:45:39 | INFO | Bot started
+2025-04-17 12:45:47 | INFO | User 1337142737 started the bot
+2025-04-17 12:52:16 | INFO | User 1337142737 opened calendar
+2025-04-17 12:52:18 | WARNING | User 1337142737 tried to add existing date 18.04.2025
+2025-04-17 12:52:21 | SUCCESS | User 1337142737 cleared all events (1 removed)
+2025-04-17 12:52:22 | INFO | User 8104329017 started the bot
+2025-04-17 12:52:24 | INFO | User 1337142737 requested their events
+2025-04-17 12:53:32 | WARNING | Bot shutting down
+2025-04-17 12:53:32 | INFO | Bot stopped
+2025-04-17 12:53:32 | INFO | Bot stopped by user
+2025-04-17 13:13:06 | INFO | Starting bot polling...
+2025-04-17 13:13:06 | INFO | Bot started
+2025-04-17 13:13:14 | INFO | User 1337142737 started the bot
+2025-04-17 13:26:48 | WARNING | Bot shutting down
+2025-04-17 13:26:48 | INFO | Bot stopped
+2025-04-17 13:26:48 | INFO | Bot stopped by user
