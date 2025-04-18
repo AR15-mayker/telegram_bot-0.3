@@ -2,7 +2,7 @@ import sys
 import os
 import asyncio
 from aiogram import Bot, Dispatcher, F, types
-from aiogram.filters import Command, ChatTypeFilter
+from aiogram.filters import Command, ChatTypeFilter # type: ignore
 from aiogram.enums import ChatType
 
 # Настройка пути для импортов

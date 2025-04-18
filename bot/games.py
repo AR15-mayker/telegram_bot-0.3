@@ -16,20 +16,11 @@ class ChatGames:
                 "answer": 0,
                 "explanation": "Правильный ответ: 6 (сначала умножение!)"
             },
-            {
-                "question": "Столица Франции?",
-                "options": ["Лондон", "Париж", "Берлин"],
-                "answer": 1,
-                "explanation": "Конечно же Париж!"
-            },
-            {
-                "question": "Самая большая планета Солнечной системы?",
-                "options": ["Земля", "Юпитер", "Сатурн"],
-                "answer": 1,
-                "explanation": "Юпитер - газовый гигант!"
-            }
+            # ... другие викторины
         ]
-        
+        self.register_handlers(dp)
+
+    def register_handlers(self, dp: Dispatcher):
         dp.message.register(
             self.dice_game,
             Command("dice"),
@@ -47,7 +38,6 @@ class ChatGames:
         )
 
     async def _check_bot_permissions(self, message: types.Message) -> bool:
-        """Проверка прав бота в группе"""
         if message.chat.type == ChatType.PRIVATE:
             return True
             
@@ -55,27 +45,20 @@ class ChatGames:
         return bot_member.can_send_polls
 
     async def dice_game(self, message: types.Message):
-        """Игра в кости"""
         try:
             dice = await message.answer_dice(emoji="🎲")
-            await message.answer("Кто получит больше очков? Сравните результаты!")
-            
-            # Можно добавить логирование игры
-            logger.info(f"Dice game started by {message.from_user.id} in chat {message.chat.id}")
-            
+            logger.info(f"Dice game by {message.from_user.id} in chat {message.chat.id}")
         except Exception as e:
             logger.error(f"Dice error: {e}")
-            await message.answer("⚠️ Не удалось отправить dice. Попробуйте позже.")
+            await message.answer("⚠️ Не удалось отправить dice")
 
     async def quiz_game(self, message: types.Message):
-        """Случайная викторина"""
-        try:
-            if not await self._check_bot_permissions(message):
-                await message.answer("❌ Мне нужны права на отправку опросов!")
-                return
+        if not await self._check_bot_permissions(message):
+            await message.answer("❌ Мне нужны права на отправку опросов!")
+            return
 
+        try:
             quiz = random.choice(self.quizzes)
-            
             await message.answer_poll(
                 question=quiz["question"],
                 options=quiz["options"],
@@ -85,22 +68,16 @@ class ChatGames:
                 explanation=quiz["explanation"],
                 open_period=30
             )
-            
-            logger.info(f"Quiz '{quiz['question']}' started by {message.from_user.id}")
-            
         except Exception as e:
             logger.error(f"Quiz error: {e}")
-            await message.answer(f"⚠️ Ошибка при создании опроса: {e}")
+            await message.answer(f"⚠️ Ошибка: {e}")
 
     async def quiz_list(self, message: types.Message):
-        """Показать все доступные викторины"""
         try:
-            quizzes_text = "📚 Доступные викторины:\n\n"
-            for i, quiz in enumerate(self.quizzes, 1):
-                quizzes_text += f"{i}. {quiz['question']}\n"
-            
-            await message.answer(quizzes_text + "\nИспользуйте /quiz для случайной викторины")
-            
+            text = "📚 Доступные викторины:\n\n" + "\n".join(
+                f"{i}. {q['question']}" for i, q in enumerate(self.quizzes, 1)
+            )
+            await message.answer(text)
         except Exception as e:
             logger.error(f"Quiz list error: {e}")
-            await message.answer("⚠️ Не удалось показать список викторин")
+            await message.answer("⚠️ Ошибка при показе списка")

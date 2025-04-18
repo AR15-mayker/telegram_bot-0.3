@@ -1,5 +1,5 @@
 import aiosqlite
-from bot.config import DB_NAME
+from config import DB_NAME  # Теперь импорт будет работать
 
 class Database:
     @staticmethod
@@ -26,6 +26,4 @@ class Database:
                 await cursor.close()
                 return result
             await db.commit()
-            rowcount = cursor.rowcount
-            await cursor.close()
-            return rowcount
+            return cursor.rowcount
