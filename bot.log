@@ -202,3 +202,96 @@
 2025-04-17 13:26:48 | WARNING | Bot shutting down
 2025-04-17 13:26:48 | INFO | Bot stopped
 2025-04-17 13:26:48 | INFO | Bot stopped by user
+2025-04-18 11:08:41 | INFO | Starting bot polling...
+2025-04-18 11:08:41 | INFO | Bot started
+2025-04-18 11:08:55 | INFO | User 1337142737 started the bot
+2025-04-18 11:09:07 | INFO | User 1337142737 opened calendar
+2025-04-18 11:09:09 | SUCCESS | User 1337142737 added new date: 19.04.2025 (ID: 6fd2292b-d74b-4616-800c-ace4e8a82166)
+2025-04-18 11:09:11 | INFO | User 1337142737 requested their events
+2025-04-18 11:09:43 | WARNING | Bot shutting down
+2025-04-18 11:09:43 | INFO | Bot stopped
+2025-04-18 11:09:43 | INFO | Bot stopped by user
+2025-04-18 11:37:17 | INFO | Starting bot polling...
+2025-04-18 11:37:17 | INFO | Bot started
+2025-04-18 11:37:17 | INFO | User 1337142737 started the bot
+2025-04-18 11:37:29 | INFO | User 1337142737 opened calendar
+2025-04-18 11:39:32 | INFO | User 5045026018 opened calendar
+2025-04-18 11:39:37 | SUCCESS | User 5045026018 added new date: 30.04.2025 (ID: d19ac70a-9993-464c-a994-c514ec4d6ccf)
+2025-04-18 11:39:48 | INFO | User 1337142737 requested their events
+2025-04-18 11:40:00 | SUCCESS | User 1337142737 deleted event 6fd2292b-d74b-4616-800c-ace4e8a82166 (19.04.2025)
+2025-04-18 11:40:05 | INFO | User 5045026018 requested their events
+2025-04-18 11:41:01 | INFO | User 1337142737 requested their events
+2025-04-18 11:41:04 | INFO | User 5045026018 requested their events
+2025-04-18 11:41:14 | SUCCESS | User 5045026018 deleted event d19ac70a-9993-464c-a994-c514ec4d6ccf (30.04.2025)
+2025-04-18 11:41:24 | INFO | User 1337142737 opened calendar
+2025-04-18 11:41:26 | SUCCESS | User 1337142737 added new date: 19.04.2025 (ID: f8c72a38-b61c-4735-863a-fffd77040651)
+2025-04-18 11:41:30 | INFO | User 1337142737 requested their events
+2025-04-18 11:45:02 | WARNING | Bot shutting down
+2025-04-18 11:45:02 | INFO | Bot stopped
+2025-04-18 11:45:02 | INFO | Bot stopped by user
+2025-04-18 11:49:25 | INFO | Starting bot polling...
+2025-04-18 11:49:25 | INFO | Bot started
+2025-04-18 11:49:25 | INFO | User 1765091657 started the bot
+2025-04-18 11:49:29 | INFO | User 1765091657 opened calendar
+2025-04-18 11:49:33 | INFO | User 1765091657 requested their events
+2025-04-18 11:49:45 | INFO | User 1765091657 requested their events
+2025-04-18 11:49:49 | SUCCESS | User 1765091657 added new date: 03.04.2025 (ID: a3ab40d7-fb8a-4e47-9433-c2ef32e4dd42)
+2025-04-18 11:49:52 | INFO | User 1765091657 requested their events
+2025-04-18 11:50:02 | SUCCESS | User 1765091657 deleted event a3ab40d7-fb8a-4e47-9433-c2ef32e4dd42 (03.04.2025)
+2025-04-18 11:54:17 | WARNING | Bot shutting down
+2025-04-18 11:54:17 | INFO | Bot stopped
+2025-04-18 11:54:17 | INFO | Bot stopped by user
+2025-04-18 12:14:01 | INFO | Starting bot polling...
+2025-04-18 12:14:01 | INFO | Bot started
+2025-04-18 12:14:49 | INFO | User 1337142737 started the bot
+2025-04-18 12:15:28 | WARNING | Bot shutting down
+2025-04-18 12:15:29 | INFO | Bot stopped
+2025-04-18 12:15:29 | INFO | Bot stopped by user
+2025-04-18 12:22:07 | INFO | Starting bot polling...
+2025-04-18 12:22:07 | INFO | Bot started
+2025-04-18 12:26:46 | WARNING | Bot shutting down
+2025-04-18 12:26:46 | INFO | Bot stopped
+2025-04-18 12:26:46 | INFO | Bot stopped by user
+2025-04-18 12:26:52 | INFO | Starting bot polling...
+2025-04-18 12:26:52 | INFO | Bot started
+2025-04-18 12:27:06 | INFO | User 1337142737 started the bot
+2025-04-18 12:31:04 | WARNING | Bot shutting down
+2025-04-18 12:31:04 | INFO | Bot stopped
+2025-04-18 12:31:04 | INFO | Bot stopped by user
+2025-04-18 12:32:08 | INFO | Starting bot polling...
+2025-04-18 12:32:08 | INFO | Bot started
+2025-04-18 13:01:08 | WARNING | Bot shutting down
+2025-04-18 13:01:08 | INFO | Bot stopped
+2025-04-18 13:01:08 | INFO | Bot stopped by user
+2025-04-18 13:02:42 | INFO | Starting bot polling...
+2025-04-18 13:02:42 | INFO | Bot started
+2025-04-18 13:02:54 | INFO | User 1337142737 started the bot
+2025-04-18 13:17:39 | INFO | User 1337142737 started the bot
+2025-04-18 13:17:41 | INFO | User 1337142737 opened calendar
+2025-04-18 13:17:44 | INFO | User 1337142737 requested their events
+2025-04-18 13:17:54 | SUCCESS | User 1337142737 deleted event f8c72a38-b61c-4735-863a-fffd77040651 (19.04.2025)
+2025-04-18 13:17:59 | INFO | User 1337142737 opened calendar
+2025-04-18 13:18:01 | SUCCESS | User 1337142737 added new date: 19.04.2025 (ID: 84894559-3831-4030-b465-ca2afb5726ed)
+2025-04-18 13:18:03 | INFO | User 1337142737 requested their events
+2025-04-18 13:18:06 | SUCCESS | User 1337142737 deleted event 84894559-3831-4030-b465-ca2afb5726ed (19.04.2025)
+2025-04-18 13:18:10 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: 48fe6f82-34b0-4cfc-8e32-5e811d372b67)
+2025-04-18 13:18:12 | INFO | User 1337142737 requested their events
+2025-04-18 13:18:32 | INFO | User 1337142737 set reminder for 48fe6f82-34b0-4cfc-8e32-5e811d372b67 at 18.04.2025 13:19
+2025-04-18 13:18:42 | INFO | User 1337142737 opened calendar
+2025-04-18 13:18:44 | WARNING | User 1337142737 tried to add existing date 18.04.2025
+2025-04-18 13:18:47 | INFO | User 1337142737 opened calendar
+2025-04-18 13:18:48 | WARNING | User 1337142737 tried to add existing date 18.04.2025
+2025-04-18 13:18:54 | INFO | User 1337142737 requested their events
+2025-04-18 13:19:09 | SUCCESS | User 1337142737 deleted event 48fe6f82-34b0-4cfc-8e32-5e811d372b67 (18.04.2025)
+2025-04-18 13:19:12 | INFO | User 1337142737 requested their events
+2025-04-18 13:19:16 | INFO | User 1337142737 opened calendar
+2025-04-18 13:19:18 | SUCCESS | User 1337142737 added new date: 18.04.2025 (ID: 4bc3182f-57f0-4b30-b7ff-5af8786f67a6)
+2025-04-18 13:19:20 | INFO | User 1337142737 requested their events
+2025-04-18 13:24:46 | WARNING | Bot shutting down
+2025-04-18 13:24:47 | INFO | Bot stopped
+2025-04-18 13:24:47 | INFO | Bot stopped by user
+2025-04-18 13:34:02 | INFO | Starting bot polling...
+2025-04-18 13:34:02 | INFO | Bot started
+2025-04-18 13:45:35 | WARNING | Bot shutting down
+2025-04-18 13:45:35 | INFO | Bot stopped
+2025-04-18 13:45:35 | INFO | Bot stopped by user
